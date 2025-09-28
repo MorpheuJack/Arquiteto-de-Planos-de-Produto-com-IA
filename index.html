@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquiteto de Planos de Produto com IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --glow-color: #00CFE8; /* Electric Cyan glow for highlights */
+        --background-start: #0d1117;
+        --background-end: #020412;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle, var(--background-start) 0%, var(--background-end) 100%);
+        background-size: 200% 200%;
+        animation: gradientBG 25s ease infinite;
+        color: #e6edf3; /* Light grey for text */
+      }
+
+      @keyframes gradientBG {
+          0% { background-position: 50% 0%; }
+          50% { background-position: 50% 100%; }
+          100% { background-position: 50% 0%; }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(1rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+      
+      /* Glassmorphism utility class - Tech Version */
+      .glass-card {
+        background: rgba(13, 17, 23, 0.3); /* Darker, less transparent background */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 1rem; /* 16px */
+        border: 1px solid rgba(0, 207, 232, 0.2); /* Cyan border */
+        box-shadow: 0 8px 32px 0 rgba(2, 4, 18, 0.3);
+      }
+
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+          width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+          background: rgba(0, 207, 232, 0.05);
+          border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+          background: rgba(0, 207, 232, 0.3);
+          border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+          background: rgba(0, 207, 232, 0.5);
+      }
+
+      /* Prose overrides for Markdown content on dark bg */
+      .prose {
+          color: #c9d1d9;
+      }
+      .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+          color: #ffffff;
+          border-bottom: 1px solid rgba(0, 207, 232, 0.2);
+          padding-bottom: 0.3em;
+      }
+      .prose strong {
+          color: #ffffff;
+      }
+      .prose blockquote {
+          color: #a1aab4;
+          border-left-color: var(--glow-color);
+          font-style: italic;
+      }
+      .prose code:not(pre > code) {
+          color: var(--glow-color);
+          background-color: rgba(0, 207, 232, 0.1);
+          padding: 0.2em 0.4em;
+          border-radius: 6px;
+      }
+      .prose pre {
+          background-color: var(--background-end);
+          border: 1px solid rgba(0, 207, 232, 0.2);
+          border-radius: 0.5rem;
+          padding: 1rem;
+      }
+      .prose pre code {
+          color: inherit;
+          background-color: transparent;
+          padding: 0;
+      }
+      .prose a {
+          color: var(--glow-color);
+          text-decoration: none;
+          transition: text-shadow 0.2s ease;
+      }
+      .prose a:hover {
+        text-decoration: underline;
+        text-shadow: 0 0 5px rgba(0, 207, 232, 0.7);
+      }
+      .prose ul > li::marker,
+      .prose ol > li::marker {
+          color: var(--glow-color);
+      }
+      .prose hr {
+          border-color: rgba(0, 207, 232, 0.3);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0",
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.1",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+    "react-zoom-pan-pinch": "https://aistudiocdn.com/react-zoom-pan-pinch@^3.6.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="text-gray-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
